@@ -1,0 +1,60 @@
+{
+    "daily_schedule": [
+        {
+            "start_hour": 8,
+            "end_hour": 12,
+            "activities": [
+                {"name": "语文作业", "weight": 2.5},
+                {"name": "数学作业", "weight": 0.5},
+                {"name": "英语作业", "weight": 0.5},
+                {"name": "物理作业", "weight": 0.5},
+                {"name": "化学作业", "weight": 0.5},
+                {"name": "生物作业", "weight": 0.5},
+                {"name": "BBC", "weight": 1},
+                {"name": "编程", "weight": 4},
+                {"name": "阅读", "weight": 1},
+                {"name": "休息", "weight": 0.5}
+            ]
+        },
+        {
+            "start_hour": 12,
+            "end_hour": 14,
+            "activities": [
+                {"name": "午间休息", "weight": 2}
+            ]
+        },
+        {
+            "start_hour": 13,
+            "end_hour": 19,
+            "activities": [
+                {"name": "语文作业", "weight": 2.5},
+                {"name": "数学作业", "weight": 0.5},
+                {"name": "英语作业", "weight": 0.5},
+                {"name": "物理作业", "weight": 0.5},
+                {"name": "化学作业", "weight": 0.5},
+                {"name": "生物作业", "weight": 0.5},
+                {"name": "BBC", "weight": 1},
+                {"name": "编程", "weight": 4},
+                {"name": "阅读", "weight": 1},
+                {"name": "休息", "weight": 0.5}
+            ]
+        },
+        {
+            "start_hour": 19,
+            "end_hour": 22,
+            "activities": [
+                {"name": "晚间休息", "weight": 3}
+            ]
+        },
+        {
+            "start_hour": 22,
+            "end_hour": 8,
+            "activities": [
+                {"name": "睡觉", "weight": 5}
+            ]
+        }
+    ],
+    "intro_sound": "intro.flac",
+    "tts_lang": "zh-cn",
+    "tts_text_template": "接下来：{activity}"
+}
