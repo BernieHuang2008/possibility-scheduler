@@ -99,6 +99,7 @@ def main():
         # 3. Wake up. Perform task.
         
         next_hour = (now + datetime.timedelta(hours=1)).replace(minute=0, second=0, microsecond=0)
+        # next_hour = (now + datetime.timedelta(seconds=10))
         seconds_to_sleep = (next_hour - now).total_seconds()
         
         print(f"Sleeping for {seconds_to_sleep:.2f} seconds until {next_hour.strftime('%H:%M:%S')}...")
@@ -143,8 +144,8 @@ def main():
         print(f"Announcing: {announcement_text}")
         
         try:
-            play_audio(config.get('intro_sound', 'intro.flac'), TEMP_TTS_FILE)
             generate_tts(announcement_text, config.get('tts_lang', 'zh-cn'), TEMP_TTS_FILE)
+            play_audio(config.get('intro_sound', 'intro.flac'), TEMP_TTS_FILE)
         except Exception as e:
             print(f"Failed to perform announcement: {e}")
             
