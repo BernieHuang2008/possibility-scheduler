@@ -79,28 +79,9 @@ def main():
     last_hour_active = None # To track consecutive hours
 
     while True:
-        # Load config each time to allow dynamic updates without restart
-        try:
-            config = load_config()
-        except Exception as e:
-            print(f"Error loading config: {e}")
-            time.sleep(60)
-            continue
-
-        now = datetime.datetime.now()
-        current_hour = now.hour
-        
-        # Check if we are in a valid time slot
-        activities = get_current_activity_rules(current_hour, config)
-        
-        # Correct Loop Structure for "Start of every hour"
-        # 1. Calculate seconds to next hour.
-        # 2. Sleep.
-        # 3. Wake up. Perform task.
-        
-        next_hour = (now + datetime.timedelta(hours=1)).replace(minute=0, second=0, microsecond=0)
+        next_hour = (datetime.datetime.now() + datetime.timedelta(hours=1)).replace(minute=0, second=0, microsecond=0)
         # next_hour = (now + datetime.timedelta(seconds=10))
-        seconds_to_sleep = (next_hour - now).total_seconds()
+        seconds_to_sleep = (next_hour - datetime.datetime.now()).total_seconds()
         
         print(f"Sleeping for {seconds_to_sleep:.2f} seconds until {next_hour.strftime('%H:%M:%S')}...")
         time.sleep(seconds_to_sleep)
